@@ -1,6 +1,10 @@
+<script>
+  import {likeCount} from "../store/store.js";
+</script>
+
 <style>
   .Header {
-    background-color: white;
+    background-color: black;
     position: fixed;
     width: 100%;
   }
@@ -8,7 +12,7 @@
     grid-template-columns: minmax(auto, 936px);
     display: grid;
     justify-content: center;
-    background-color: white;
+    background-color: rgb(252, 207, 228);
     border-bottom: 1px solid rgba(38, 38, 38, 0.4);
   }
   .Header-content {
@@ -26,7 +30,7 @@
   }
   .Header i {
     font-size: 16px;
-    color: rgba(38, 38, 38, 0.7);
+    color: rgb(255, 40, 201);
     cursor: pointer;
   }
 
@@ -38,7 +42,7 @@
     font-family: "Pacifico", cursive;
     cursor: pointer;
     position: relative;
-    background: #fff;
+    background: rgb(255, 255, 255);
     mix-blend-mode: multiply;
     display: inline-block;
   }
@@ -66,6 +70,7 @@
                 <ul>
                     <li>
                         <i class="fas fa-heart"/>
+                        {$likeCount === 0 ? '' : $likeCount}
                     </li>
                     <li>
                         <i class="fas fa-user-alt"/>

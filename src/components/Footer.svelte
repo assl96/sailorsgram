@@ -3,7 +3,7 @@
     font-size: 11px;
     letter-spacing: 1px;
     font-weight: normal;
-    color: #c7c7c7;
+    color: rgb(190, 12, 95);
   }
 </style>
 

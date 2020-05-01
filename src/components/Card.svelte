@@ -1,19 +1,41 @@
 <script>
-    import Comments from './Comments.svelte';
+  import Comments from './Comments.svelte';
+  import Modal from './Modal.svelte';
+  import Share from './Share.svelte';
 
-    export let username;
-    export let location;
-    export let photo;
-    export let postComment;
-    export let comments;
-    export let avatar;
+  import { blur } from 'svelte/transition';
+  import {likeCount} from "../store/store.js";
+
+  export let username;
+  export let location;
+  export let photo;
+  export let postComment;
+  export let comments;
+  export let avatar;
+
+  let isModal = false;
+  let like = false;
+  let bookmark = false;
+    
+  function handleClick(){
+    isModal = !isModal;
+    }
+
+  function handleLike() {
+    like = !like;
+    if(like){
+      likeCount.update(n => n + 1)
+    } else {
+      likeCount.update(n => n - 1)
+    }
+  }
 </script>
 
 <style>
   .Card {
     border: 1px solid rgba(219, 219, 219, 1);
     border-radius: 4px;
-    background-color: white;
+    background-color:  rgba(207, 113, 144, 0.726);
     margin: 0 0 2em 0;
   }
   .Card-header {
@@ -38,13 +60,13 @@
     font-size: 14px;
     font-weight: 600;
     margin: 0 0 0 1em;
-    color: black;
+    color: rgba(148, 53, 97, 0.829);
   }
   .Card-user h2 span {
     display: block;
     font-size: 12px;
     font-weight: normal;
-    color: rgba(38, 38, 38, 0.7);
+    color: rgb(190, 12, 95);
   }
   .Card-photo {
     padding: 0;
@@ -82,20 +104,20 @@
   .Card-description h3 {
     font-size: 14px;
     font-weight: bold;
-    color: black;
+    color: rgb(190, 12, 131);
   }
   .Card-description span {
     font-size: 14px;
   }
-  /* .active-like {
+  .active-like {
     color: #bc1888;
     animation: bounce linear 0.8s;
     animation-iteration-count: 1;
     transform-origin: 20% 20%;
   }
   .active-bookmark {
-    color: #f09433;
-  } */
+    color: #bc1888;
+  }
 
   @keyframes bounce {
     0% {
@@ -123,6 +145,14 @@
 </style>
 
 <div class="Card">
+  {#if isModal}
+    <div transition:blur>
+      <Modal>
+        <Share on:click={handleClick}/>
+      </Modal>
+    </div>
+  {/if}
+
     <div class="Card-container">
         <div class="Card-header">
             <div class="Card-user">
@@ -137,23 +167,29 @@
             </div>
             </div>
         <div class="Card-photo">
-            <figure>
+            <figure on:dblclick={handleLike}>
                 <img src={photo} alt={username}>
             </figure>           
         </div>
         <div class="Card-icons">
             <div class="Card-icon-firts">
-                <i class="fas fa heart"/>
-                <i class= "fas fa-paper-plane"/>
+                <i class="fas fa-heart"
+                  class:active-like={like} 
+                  on:click={handleLike}
+                />
+                <i class= "fas fa-paper-plane" on:click={handleClick}/>
             </div>
             <div class="Card-icond-second">
-                <i class="fas fa-bookmark" />
+                <i class="fas fa-bookmark" 
+                class:active-bookmark={bookmark}
+                on:click={() => (bookmark = !bookmark)}
+                />
             </div>
         </div>
-            <div class="Card-description">
-                <h3>{username}</h3>
-                <span>{postComment}</span>
-            </div>
-            <Comments {comments}/>
+        <div class="Card-description">
+            <h3>{username}</h3>
+            <span>{postComment}</span>
+        </div>
+        <Comments {comments}/>
     </div>        
 </div>    

@@ -4,7 +4,7 @@
     border-radius: 4px;
     margin: 1em 0;
     padding: 0.5em 1em;
-    background-color: white;
+    background-color: rgba(207, 113, 144, 0.726);
   }
   .Stories-item img {
     width: 32px;
@@ -18,14 +18,14 @@
   }
   .Stories-item h2 {
     font-size: 14px;
-    color: black;
+    color: rgb(190, 12, 95);
     margin: 0 0 0 0.5em;
   }
   .Stories-item h2 span {
     display: block;
     font-size: 9px;
     text-transform: uppercase;
-    color: gray;
+    color: white;
   }
   .Stories-head {
     display: flex;
@@ -40,7 +40,7 @@
   .Stories-head span {
     font-size: 12px;
     font-weight: normal;
-    color: black;
+    color: rgb(190, 12, 131);
   }
   .Stories-items {
     margin: 0.5em 0 0.5em 0;

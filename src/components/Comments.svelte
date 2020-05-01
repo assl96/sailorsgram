@@ -2,8 +2,9 @@
   export let comments = [];
  
   function addComment(event){
-    const mgs = event.target.text.value;
-    if (mgs.length > 3){
+    console.log(event.target.text)
+    const msg = event.target.text.value;
+    if (msg.length > 3){
       const message = {
         id: Date.now(),
         text: msg,
@@ -20,7 +21,7 @@
 <style>
   .Comments h3 {
     font-size: 14px;
-    color: black;
+    color: rgb(151, 12, 105);
     font-weight: bold;
     margin: 0;
     padding: 0;
@@ -29,7 +30,7 @@
     font-size: 14px;
     margin: 0 0 0 0.5em;
     font-weight: normal;
-    color: rgba(black, 0.9);
+    color: rgba(rgba(0, 0, 0, 0.712), 0.9);
   }
   .Comments-add {
     padding: 1em 1em 1em 1em;
@@ -60,7 +61,7 @@
   }
   button {
     border: none;
-    color: #3897f0;
+    color: #fcfcfca4;
     font-size: 12px;
     outline: none;
     cursor: pointer;

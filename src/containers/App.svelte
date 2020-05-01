@@ -22,7 +22,7 @@ console.log(Api)
     @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
     :global(body) {
         background-color: rgb(255, 142, 179);
-        color: rgb(41, 51, 182);
+        color: rgb(255, 255, 255);
         font-family: 'Lato', sans-serif;
         margin: 0;
         padding: 0;
