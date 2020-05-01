@@ -53,5 +53,17 @@ export const Api = {
                 {id:0, text: '', username: ''}
             ]
         },
+    ],
+    stories: [
+        {
+            user: "ChibiMoon",
+            photo: "https://i.imgur.com/uwfGcya.jpg",
+            hour: '10 hours ago',
+        },
+        {
+            user: "SailorMoon",
+            photo: "https://i.imgur.com/vDSz24I.jpg",
+            hour: '10 hours ago',
+        },
     ]
 }

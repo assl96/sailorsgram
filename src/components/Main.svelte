@@ -6,8 +6,8 @@
   }
   .Main-container {
     display: grid;
-    grid-template-columns: 3fr 1fr;
-    grid-gap: 2em;
+    grid-template-columns: 1fr;
+    grid-gap: 0.0000001em;
     padding: 2em 0;
   }
 </style>

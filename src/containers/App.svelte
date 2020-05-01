@@ -13,7 +13,6 @@
         // const response = await fetch(Api)
         // data = await response.json()
     });
-console.log(Api)
 
 </script>
 
@@ -37,6 +36,6 @@ console.log(Api)
 
 <Header />
 <Main>
+    <Sidebar {...data.user} stories={data.stories}/>
     <TimeLine posts={data.posts} />
-    <Sidebar {...data.user}/>
 </Main>

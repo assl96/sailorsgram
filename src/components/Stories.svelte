@@ -1,29 +1,33 @@
+<script>
+  export let stories = [];
+</script>
+
 <style>
   .Stories {
     border: 1px solid rgba(219, 219, 219, 1);
-    border-radius: 4px;
+    border-radius: 5px;
     margin: 1em 0;
     padding: 0.5em 1em;
     background-color: rgba(207, 113, 144, 0.726);
   }
   .Stories-item img {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    border-radius: 70%;
   }
   .Stories-item {
     display: flex;
     align-items: center;
-    margin: 0 0 0.5em 0;
+    margin: 0 1em 0.5em 0;
   }
   .Stories-item h2 {
     font-size: 14px;
     color: rgb(190, 12, 95);
-    margin: 0 0 0 0.5em;
+    margin: 0 0 0 1em;
   }
   .Stories-item h2 span {
     display: block;
-    font-size: 9px;
+    font-size: 12px;
     text-transform: uppercase;
     color: white;
   }
@@ -34,16 +38,19 @@
     padding: 0.5em 0 0 0;
   }
   .Stories-head h2 {
-    font-size: 12px;
+    font-size: 15px;
     font-weight: 600;
   }
   .Stories-head span {
-    font-size: 12px;
+    font-size: 15px;
     font-weight: normal;
     color: rgb(190, 12, 131);
   }
   .Stories-items {
     margin: 0.5em 0 0.5em 0;
+    display: flex;
+    justify-content: left;
+    align-items: center;
   }
   .Stories-item-box {
     width: 32px;
@@ -64,15 +71,17 @@
             <span> See All</span>
         </div>
         <div class="Stories-items">
+        {#each stories as story}
             <div class="Stories-item">
                 <div class="Stories-item-box">
-                    <img src="https://i.imgur.com/uwfGcya.jpg" alt=""/>
+                    <img src={story.photo} alt=""/>
                 </div>
                 <h2>
-                    ChibiMoon
-                    <span>10 hours ago</span>
+                    {story.user}
+                    <span>{story.hour}</span>
                 </h2>
             </div>
+        {/each}   
         </div>
     </div>
 </div>
