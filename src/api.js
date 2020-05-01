@@ -14,7 +14,7 @@ export const Api = {
             bookmark: false,
             postComment: "Holas!",
             comments: [
-                {id:0, text: ''}
+                {id:0, text: '', username: 'SailorMars'}
             ]
         },
         {
