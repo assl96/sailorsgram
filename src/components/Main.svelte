@@ -13,7 +13,7 @@
   }
 </style>
 
-<div class="main">
+<div class="Main">
     <div class="Main-container">
     <slot />
     </div>

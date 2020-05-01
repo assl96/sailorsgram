@@ -63,7 +63,7 @@
             <h2>Stories</h2>
             <span> See All</span>
         </div>
-        <div class="Stories-Items">
+        <div class="Stories-items">
             <div class="Stories-item">
                 <div class="Stories-item-box">
                     <img src="https://i.imgur.com/uwfGcya.jpg" alt=""/>

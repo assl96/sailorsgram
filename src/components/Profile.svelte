@@ -1,3 +1,8 @@
+<script>
+  export let nickname;
+  export let name;
+</script>
+
 <style>
   .Profile-content {
     display: flex;
@@ -30,8 +35,8 @@
             <img src="https://i.imgur.com/uwfGcya.jpg" alt='' />
         </div>
         <div class="Profile-info">
-        <h2>ChibiMoon</h2>
-        <span>Usagi Serenity</span>
+        <h2>{nickname}</h2>
+        <span>{name}</span>
         </div>
     </div>
 </div>
